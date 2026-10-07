@@ -1,0 +1,10 @@
+{
+  "name": "lesnedyshop-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix ./lesnedyshop run dev",
+    "build": "npm --prefix ./lesnedyshop run build",
+    "preview": "npm --prefix ./lesnedyshop run preview",
+    "lint": "npm --prefix ./lesnedyshop run lint"
+  }
+}

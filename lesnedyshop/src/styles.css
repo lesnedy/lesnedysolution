@@ -1,0 +1,213 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* LESNEDY Solution Company — Emerald Prestige
+ * Deep emerald surfaces + warm ivory text + emerald accent.
+ * Editorial Instrument Serif headings, Work Sans body.
+ * Semantic tokens only — never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-emerald-bg: var(--emerald-bg);
+  --color-emerald-surface: var(--emerald-surface);
+  --color-emerald-accent: var(--emerald-accent);
+  --color-ivory: var(--ivory);
+
+  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-elegant: 0 30px 80px -30px color-mix(in oklab, black 70%, transparent);
+  --shadow-glow: 0 0 60px -12px color-mix(in oklab, var(--emerald-accent) 55%, transparent);
+  --shadow-gold: 0 20px 60px -20px color-mix(in oklab, var(--emerald-accent) 40%, transparent);
+}
+
+:root {
+  --radius: 1.25rem;
+
+  /* Emerald Prestige — single dark editorial theme */
+  --emerald-bg: #0B1F17;
+  --emerald-surface: #0E3B2E;
+  --emerald-accent: #10B981;
+  --ivory: #F5F1E6;
+
+  --background: var(--emerald-bg);
+  --foreground: var(--ivory);
+  --card: var(--emerald-surface);
+  --card-foreground: var(--ivory);
+  --popover: var(--emerald-surface);
+  --popover-foreground: var(--ivory);
+
+  --primary: var(--emerald-accent);
+  --primary-foreground: var(--emerald-bg);
+  --secondary: color-mix(in oklab, var(--emerald-surface) 80%, black);
+  --secondary-foreground: var(--ivory);
+  --muted: color-mix(in oklab, var(--emerald-surface) 70%, black);
+  --muted-foreground: color-mix(in oklab, var(--ivory) 55%, var(--emerald-bg));
+  --accent: color-mix(in oklab, var(--emerald-accent) 18%, transparent);
+  --accent-foreground: var(--ivory);
+  --destructive: oklch(0.65 0.22 27);
+  --destructive-foreground: var(--ivory);
+  --border: color-mix(in oklab, var(--ivory) 10%, transparent);
+  --input: color-mix(in oklab, var(--ivory) 12%, transparent);
+  --ring: var(--emerald-accent);
+
+  --gradient-hero:
+    radial-gradient(ellipse 70% 55% at 20% 15%, color-mix(in oklab, var(--emerald-accent) 18%, transparent), transparent 65%),
+    radial-gradient(ellipse 60% 50% at 85% 100%, color-mix(in oklab, var(--emerald-accent) 12%, transparent), transparent 65%),
+    linear-gradient(180deg, var(--emerald-bg), color-mix(in oklab, var(--emerald-surface) 30%, var(--emerald-bg)));
+  --gradient-brand: linear-gradient(135deg, var(--emerald-accent), color-mix(in oklab, var(--emerald-accent) 60%, black));
+  --gradient-gold: linear-gradient(135deg, var(--emerald-accent), var(--ivory));
+}
+
+/* Mirror on .dark so the theme toggle stays a no-op instead of breaking. */
+.dark {
+  --background: var(--emerald-bg);
+  --foreground: var(--ivory);
+  --card: var(--emerald-surface);
+  --card-foreground: var(--ivory);
+  --popover: var(--emerald-surface);
+  --popover-foreground: var(--ivory);
+  --primary: var(--emerald-accent);
+  --primary-foreground: var(--emerald-bg);
+  --secondary: color-mix(in oklab, var(--emerald-surface) 80%, black);
+  --secondary-foreground: var(--ivory);
+  --muted: color-mix(in oklab, var(--emerald-surface) 70%, black);
+  --muted-foreground: color-mix(in oklab, var(--ivory) 55%, var(--emerald-bg));
+  --accent: color-mix(in oklab, var(--emerald-accent) 18%, transparent);
+  --accent-foreground: var(--ivory);
+  --border: color-mix(in oklab, var(--ivory) 10%, transparent);
+  --input: color-mix(in oklab, var(--ivory) 12%, transparent);
+  --ring: var(--emerald-accent);
+}
+
+@utility glass {
+  background: color-mix(in oklab, var(--emerald-surface) 70%, transparent);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--ivory) 10%, transparent);
+}
+
+@utility bg-hero {
+  background-image: var(--gradient-hero);
+}
+
+@utility bg-brand {
+  background-image: var(--gradient-brand);
+}
+
+@utility text-gradient-brand {
+  background-image: linear-gradient(135deg, var(--emerald-accent), var(--ivory));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-gold {
+  background-image: linear-gradient(135deg, var(--emerald-accent), var(--ivory));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility shadow-elegant { box-shadow: var(--shadow-elegant); }
+@utility shadow-glow { box-shadow: var(--shadow-glow); }
+@utility shadow-gold { box-shadow: var(--shadow-gold); }
+
+@utility bento-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid color-mix(in oklab, var(--emerald-accent) 12%, transparent);
+  background: var(--emerald-surface);
+  transition: transform 400ms cubic-bezier(.2,.7,.2,1), border-color 400ms, box-shadow 400ms;
+}
+@utility bento-card-hover {
+  &:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in oklab, var(--emerald-accent) 40%, transparent);
+    box-shadow: var(--shadow-elegant);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@utility animate-float { animation: float 7s ease-in-out infinite; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@utility animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+@utility grid-pattern {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--ivory) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--ivory) 5%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+@utility eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--emerald-accent);
+}
+
+@utility hairline {
+  border-top: 1px solid color-mix(in oklab, var(--ivory) 12%, transparent);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+  ::selection { background: var(--emerald-accent); color: var(--emerald-bg); }
+}
