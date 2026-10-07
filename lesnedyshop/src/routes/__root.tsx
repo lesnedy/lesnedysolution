@@ -11,7 +11,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 
-import "../i18n";
+import i18n from "../i18n";
 import appCss from "../styles.css?url";
 import { resolveLang } from "@/lib/seo";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -149,12 +149,10 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const { lang } = Route.useSearch();
-  const { i18n } = useTranslation();
-
   useEffect(() => {
     const target = lang?.toLowerCase().startsWith("sw") ? "sw" : lang ? "en" : null;
     if (target && i18n.language !== target) i18n.changeLanguage(target);
-  }, [lang, i18n]);
+  }, [lang]);
 
   return (
     <QueryClientProvider client={queryClient}>
