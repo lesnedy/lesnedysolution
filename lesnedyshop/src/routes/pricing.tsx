@@ -1,6 +1,6 @@
 import { localizedHead } from "@/lib/seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/i18n/use-translation";
 import { Check, Sparkles } from "lucide-react";
 import { Section } from "@/components/section";
 import { Card } from "@/components/ui/card";

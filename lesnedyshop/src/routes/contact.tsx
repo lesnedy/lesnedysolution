@@ -1,6 +1,6 @@
 import { localizedHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/i18n/use-translation";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { z } from "zod";
 import { toast } from "sonner";

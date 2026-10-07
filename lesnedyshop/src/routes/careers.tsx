@@ -1,6 +1,6 @@
 import { localizedHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/i18n/use-translation";
 import { Briefcase, GraduationCap, MapPin, Sprout } from "lucide-react";
 import { Section, SectionHeader } from "@/components/section";
 import { Card } from "@/components/ui/card";

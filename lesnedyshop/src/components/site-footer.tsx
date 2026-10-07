@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Github, Instagram, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/i18n/use-translation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 

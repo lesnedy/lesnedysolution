@@ -1,6 +1,6 @@
 import { localizedHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/i18n/use-translation";
 import { Sprout, HeartPulse, GraduationCap, Landmark, Banknote, HandHeart, Factory, ShoppingBag } from "lucide-react";
 import { Section } from "@/components/section";
 import { Card } from "@/components/ui/card";

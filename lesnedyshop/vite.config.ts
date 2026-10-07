@@ -11,6 +11,11 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 const deployTarget = process.env.VERCEL ? "vercel" : undefined;
 
 export default defineConfig({
+  vite: {
+    resolve: {
+      dedupe: ["i18next", "react-i18next"],
+    },
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this

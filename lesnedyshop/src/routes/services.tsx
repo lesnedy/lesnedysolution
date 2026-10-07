@@ -1,6 +1,6 @@
 import { localizedHead } from "@/lib/seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/i18n/use-translation";
 import {
   Brain, Bot, Database, LineChart, BarChart3, LayoutDashboard, Globe2, Smartphone,
   Code2, Server, Plug, Cloud, Briefcase, Sprout, Wheat, CloudSun, Tractor,
