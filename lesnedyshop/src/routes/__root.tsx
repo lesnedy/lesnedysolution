@@ -139,7 +139,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en" suppressHydrationWarning>
       <head><HeadContent /></head>
       <body>
-        <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
+        {children}
         <Scripts />
       </body>
     </html>
@@ -155,15 +155,17 @@ function RootComponent() {
   }, [lang]);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-dvh flex-col">
-        <SiteHeader />
-        <main className="flex-1">
-          <Outlet />
-        </main>
-        <SiteFooter />
-      </div>
-      <Toaster />
-    </QueryClientProvider>
+    <I18nextProvider i18n={i18n}>
+      <QueryClientProvider client={queryClient}>
+        <div className="flex min-h-dvh flex-col">
+          <SiteHeader />
+          <main className="flex-1">
+            <Outlet />
+          </main>
+          <SiteFooter />
+        </div>
+        <Toaster />
+      </QueryClientProvider>
+    </I18nextProvider>
   );
 }
